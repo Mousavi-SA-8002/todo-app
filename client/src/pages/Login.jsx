@@ -20,17 +20,39 @@ const Login = () => {
   }
 
   return (
-    <div className="w-full max-w-md bg-white shadow-xl rounded-2xl p-8 mx-4">
-      <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">🔐 Login</h2>
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <input className="input" placeholder="Username" value={username} onChange={e => setUsername(e.target.value)} />
-        <input type="password" className="input" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
-        <button className="btn">Login</button>
-      </form>
-      <p className="mt-4 text-center text-sm text-gray-500">
-        Don’t have an account?
-        <Link to="/register" className="text-blue-600 hover:underline ml-1">Register</Link>
-      </p>
+    <div className="bg-gradient-to-br from-cyan-900 via-blue-900 to-indigo-900 min-h-screen flex items-center justify-center px-4 py-10 font-mono text-white">
+      <div className="bg-[#0e1f2f] p-10 rounded-3xl max-w-md w-full shadow-[0_0_30px_rgb(0,229,255)]">
+        <h2 className="text-3xl font-extrabold text-cyan-400 drop-shadow-[0_0_10px_rgb(0,229,255)] mb-8 text-center">
+          🔐 Login
+        </h2>
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <input
+            className="input p-4 rounded-lg bg-transparent border-2 border-cyan-500 placeholder-cyan-300 text-white focus:outline-none focus:border-cyan-400 focus:shadow-[0_0_15px_rgb(0,229,255)] transition w-full"
+            placeholder="Username"
+            value={username}
+            onChange={e => setUsername(e.target.value)}
+          />
+          <input
+            type="password"
+            className="input p-4 rounded-lg bg-transparent border-2 border-cyan-500 placeholder-cyan-300 text-white focus:outline-none focus:border-cyan-400 focus:shadow-[0_0_15px_rgb(0,229,255)] transition w-full"
+            placeholder="Password"
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+          />
+          <button
+            type="submit"
+            className="btn w-full bg-cyan-600 hover:bg-cyan-700 shadow-[0_0_15px_rgb(0,229,255)] py-4 rounded-lg font-bold uppercase tracking-wide transition-transform active:scale-95"
+          >
+            Login
+          </button>
+        </form>
+        <p className="mt-6 text-center text-sm text-cyan-300">
+          Don’t have an account?
+          <Link to="/register" className="text-cyan-400 hover:underline ml-1 font-semibold">
+            Register
+          </Link>
+        </p>
+      </div>
     </div>
   )
 }
